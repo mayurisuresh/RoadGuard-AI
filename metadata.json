@@ -1,0 +1,8 @@
+{
+  "name": "RoadGuard AI - Smart Road Defect Detection & Maintenance",
+  "description": "AI-Powered Road Surface Defect Detection & Intelligent Maintenance Prioritization System",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

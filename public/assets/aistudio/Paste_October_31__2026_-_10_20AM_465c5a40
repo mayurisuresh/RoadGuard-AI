@@ -1,0 +1,1115 @@
+# ULTIMATE MASTER PROMPT – ROADGUARD AI
+## AI-POWERED ROAD DAMAGE DETECTION AND INTELLIGENT MAINTENANCE PRIORITIZATION PLATFORM
+
+Act as an expert Senior Full-Stack Developer, AI/ML Engineer, Computer Vision Specialist, UI/UX Designer, Database Architect, Cybersecurity Engineer, Software Tester, and Hackathon Technical Mentor.
+
+I want you to DESIGN, DEVELOP, TEST, AND DELIVER a complete working full-stack web application named:
+
+# RoadGuard AI
+### AI-Powered Road Surface Defect Detection & Intelligent Maintenance Prioritization System
+
+IMPORTANT: I am participating in a hackathon and have approximately 12 hours for development. I do not want to manually write code, create files, configure multiple components, or fix incomplete source code.
+
+I want you to generate the entire application and deliver it as a downloadable ZIP file that I can extract, open in Visual Studio Code, and run on my Windows computer.
+
+Do not give me only code snippets, explanations, sample UI screens, or a folder structure. Generate the actual project files.
+
+==================================================
+1. PROJECT PROBLEM STATEMENT
+==================================================
+
+Road damage, including potholes, cracks, and deteriorating road surfaces, creates serious safety risks for drivers, pedestrians, and other road users.
+
+Traditional road inspection methods depend heavily on manual surveys and citizen complaints. This causes delayed identification, inefficient maintenance scheduling, increased repair costs, and poor infrastructure management.
+
+Municipal authorities need an intelligent platform that can automatically identify road damage, determine its geographical location, estimate its severity, and prioritize maintenance operations.
+
+Develop an AI-powered platform that addresses these problems using Computer Vision, Machine Learning, GPS, geographical mapping, data analytics, and intelligent maintenance recommendations.
+
+==================================================
+2. PROPOSED SOLUTION
+==================================================
+
+RoadGuard AI is a smart-city road maintenance platform that connects citizens, AI detection systems, administrators, and maintenance teams.
+
+The application must:
+
+1. Detect potholes and road cracks from uploaded images.
+2. Identify damage categories using a pretrained AI model.
+3. Display detection bounding boxes and confidence scores.
+4. Estimate damage severity.
+5. Capture geographical coordinates using GPS.
+6. Display damage reports on an interactive map.
+7. Calculate intelligent maintenance priority scores.
+8. Detect possible duplicate road damage reports.
+9. Recommend maintenance actions.
+10. Provide an administrator dashboard.
+11. Allow maintenance teams to manage assigned tasks.
+12. Verify repairs using before-and-after images.
+13. Generate maintenance analytics and downloadable reports.
+14. Provide notifications and complaint tracking.
+
+Complete workflow:
+
+Citizen Upload → AI Detection → Damage Classification → Severity Analysis → GPS Location → Database Storage → Duplicate Detection → Priority Calculation → Admin Review → Maintenance Assignment → Repair Verification → Analytics Dashboard.
+
+==================================================
+3. TECHNOLOGY STACK
+==================================================
+
+Use the following technology stack.
+
+FRONTEND:
+- React.js
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
+- Recharts
+- Lucide React
+
+BACKEND:
+- Python
+- FastAPI
+- REST APIs
+- Pydantic
+- Uvicorn
+
+AI/ML:
+- YOLOv8 or a compatible pretrained road damage detection model
+- OpenCV
+- NumPy
+- Pillow
+
+DATABASE:
+- SQLite
+- SQLAlchemy ORM
+
+MAP:
+- Leaflet
+- React Leaflet
+- OpenStreetMap
+
+AUTHENTICATION:
+- JWT
+- Secure password hashing using Argon2 or bcrypt
+- Role-based access control
+
+DEVELOPMENT:
+- Visual Studio Code
+- Node.js and npm
+- Python virtual environment
+- Git and GitHub
+
+Use compatible, stable dependency versions.
+
+Do not unnecessarily change this stack.
+
+==================================================
+4. REAL AI/ML IMPLEMENTATION
+==================================================
+
+This is one of the most important requirements.
+
+Implement genuine image-based road damage detection.
+
+Use a suitable pretrained road damage detection model.
+
+The model should support available categories such as:
+
+- Potholes
+- Longitudinal cracks
+- Transverse cracks
+- Alligator cracks
+
+Only display categories actually supported by the selected model.
+
+AI workflow:
+
+1. Accept an uploaded road image.
+2. Validate the image.
+3. Preprocess the image using OpenCV.
+4. Send the image to the pretrained YOLO model.
+5. Detect road damage.
+6. Generate bounding boxes.
+7. Calculate model confidence scores.
+8. Generate an annotated image.
+9. Return detection information through FastAPI.
+10. Display the result in React.
+11. Save detection information in SQLite.
+
+Display:
+
+- Original image.
+- Annotated image.
+- Detected damage category.
+- Confidence score.
+- Number of detections.
+- Processing time.
+- Detection status.
+
+MODEL REQUIREMENTS:
+
+- Do not train a model from scratch.
+- Do not pretend that a generic YOLO model is a trained pothole detector.
+- Verify that the pretrained weights actually support the required road damage classes.
+- Check model licensing and attribution requirements.
+- Include model configuration and setup instructions.
+- If weights are publicly downloadable and legally usable, include an automatic download/setup script where possible.
+- If weights cannot be bundled or downloaded, clearly explain the required model file and provide its exact configuration path.
+- Do not silently replace genuine inference with hardcoded predictions.
+
+If no model is available, provide a clearly labeled demo mode with sample results while keeping actual inference separate.
+
+The application must indicate whether it is running in REAL AI MODE or DEMO MODE.
+
+==================================================
+5. USER ROLES AND AUTHENTICATION
+==================================================
+
+Implement three user roles.
+
+A. CITIZEN
+
+- Register.
+- Log in.
+- Upload road damage images.
+- Capture current GPS location.
+- Enter a location manually.
+- Submit damage complaints.
+- View AI detection results.
+- Track complaint status.
+- View personal report history.
+- Receive repair progress notifications.
+
+B. ADMIN
+
+- Secure administrator login.
+- View all citizen reports.
+- Review AI detection results.
+- Verify or reject reports.
+- View damage severity.
+- View maintenance priority.
+- Assign repair tasks.
+- Manage maintenance personnel.
+- Update repair status.
+- View analytics.
+- Manage users.
+- Generate downloadable reports.
+
+C. MAINTENANCE TEAM
+
+- Secure login.
+- View assigned maintenance tasks.
+- View damage locations.
+- View priority scores.
+- Update task progress.
+- Add repair notes.
+- Upload before-and-after repair images.
+- Submit completed tasks.
+
+SECURITY:
+
+- Hash passwords securely.
+- Implement JWT authentication.
+- Implement backend role-based authorization.
+- Protect all admin APIs.
+- Protect maintenance APIs.
+- Validate user inputs.
+- Restrict file uploads by type and size.
+- Use environment variables for secrets.
+- Never expose passwords or secret keys in frontend code.
+
+Provide a documented demo admin account through a secure local seed process. Do not hardcode production credentials.
+
+==================================================
+6. DAMAGE SEVERITY ANALYSIS
+==================================================
+
+Create a severity analysis module.
+
+LOW:
+Minor cracks or limited surface damage.
+
+MEDIUM:
+Visible cracks, moderate potholes, or noticeable surface deterioration.
+
+HIGH:
+Large potholes, extensive cracks, or potentially dangerous damage.
+
+Use configurable rules based on:
+
+- Damage category.
+- Bounding box area relative to image dimensions.
+- Number of detections.
+- Available model information.
+
+Display the estimated severity and explanation.
+
+Allow administrators to review and override severity.
+
+Clearly explain that image-based severity is an estimate and requires field verification for actual engineering decisions.
+
+==================================================
+7. INTELLIGENT MAINTENANCE PRIORITIZATION
+==================================================
+
+Create a priority scoring engine.
+
+Formula:
+
+Priority Score =
+(0.50 × Severity Score) +
+(0.30 × Traffic Exposure Score) +
+(0.20 × Safety Risk Score)
+
+Normalize all scores between 0 and 100.
+
+Priority classification:
+
+80–100: CRITICAL
+60–79: HIGH
+35–59: MEDIUM
+0–34: LOW
+
+Example:
+
+Severity Score = 90
+Traffic Exposure = 80
+Safety Risk = 95
+
+Final Priority = 88
+
+Display:
+
+- Final priority score.
+- Priority category.
+- Severity score.
+- Traffic exposure score.
+- Safety risk score.
+- Reason for prioritization.
+- Recommended maintenance action.
+
+Make weights configurable.
+
+Do not falsely claim that live traffic data is being collected. Use manually entered or clearly labeled sample traffic exposure scores unless a real traffic provider is integrated.
+
+==================================================
+8. GPS AND INTERACTIVE MAP
+==================================================
+
+Implement:
+
+- Browser geolocation.
+- Manual latitude and longitude entry.
+- Manual address entry.
+- Leaflet interactive map.
+- OpenStreetMap tiles.
+- Damage markers.
+- Marker colors based on severity.
+- Damage information on marker click.
+- Filters by severity.
+- Filters by damage category.
+- Filters by repair status.
+- Location-based report search.
+
+Marker colors:
+
+Red = Critical
+Orange = High
+Yellow = Medium
+Green = Low
+
+If location permission is denied, allow manual location selection.
+
+Never fabricate GPS coordinates.
+
+Do not expose private citizen information on public maps.
+
+==================================================
+9. ADVANCED DUPLICATE DAMAGE DETECTION
+==================================================
+
+Implement duplicate report identification.
+
+When a new report is submitted:
+
+1. Compare its GPS coordinates with existing reports.
+2. Calculate geographic distance using the Haversine formula.
+3. Initially use a configurable 30–50 metre radius.
+4. Compare damage categories.
+5. Optionally compare image similarity.
+6. Identify potential duplicate reports.
+7. Link possible duplicates to the same underlying damage record.
+8. Avoid creating unnecessary maintenance tasks.
+
+IMPORTANT:
+
+Nearby reports must not automatically be merged if they represent different potholes.
+
+Allow admin verification before merging.
+
+Maintain the original citizen complaint records.
+
+==================================================
+10. SMART MAINTENANCE RECOMMENDATIONS
+==================================================
+
+Create a recommendation engine using:
+
+- Damage severity.
+- Priority score.
+- Traffic exposure.
+- Safety risk.
+- Number of complaints.
+- Complaint age.
+- Maintenance status.
+
+Example recommendations:
+
+"Critical pothole detected in a high-traffic area. Immediate field inspection is recommended."
+
+"Multiple complaints have been associated with this road segment. Consider combined inspection."
+
+"Medium-priority road damage has remained unresolved for several days. Schedule maintenance."
+
+Recommendations must be explainable and based on actual stored data.
+
+Do not invent confirmed traffic conditions or infrastructure information.
+
+==================================================
+11. ADMIN ANALYTICS DASHBOARD
+==================================================
+
+Build a professional dashboard containing:
+
+SUMMARY CARDS:
+
+- Total Reports.
+- Total Potholes.
+- Total Cracks.
+- Critical Damage Reports.
+- Pending Maintenance.
+- Completed Repairs.
+- Average Priority Score.
+- Reports Submitted Today.
+
+CHARTS:
+
+1. Damage Category Distribution.
+2. Severity Distribution.
+3. Weekly Report Trends.
+4. Monthly Maintenance Progress.
+5. Repair Status Distribution.
+6. Priority Score Distribution.
+7. High-Priority Damage Areas.
+
+ADDITIONAL COMPONENTS:
+
+- Recent Reports Table.
+- Highest Priority Reports.
+- Interactive Map Preview.
+- Pending Verification List.
+- Maintenance Team Activity.
+- Filters by date and category.
+
+All values must be dynamically retrieved from the database.
+
+Do not use hardcoded statistics in the actual dashboard.
+
+==================================================
+12. MAINTENANCE MANAGEMENT
+==================================================
+
+Implement the complete repair workflow.
+
+Statuses:
+
+- Pending Verification
+- Verified
+- Assigned
+- In Progress
+- Repaired
+- Rejected
+
+Admin must be able to:
+
+- Verify reports.
+- Reject invalid reports.
+- Assign maintenance personnel.
+- Change priority.
+- Add instructions.
+- View repair progress.
+
+Maintenance workers must be able to:
+
+- View assigned tasks.
+- Update task status.
+- Add comments.
+- Upload repair evidence.
+- Mark tasks as completed.
+
+Maintain a history of every status change with timestamps and the responsible user.
+
+==================================================
+13. BEFORE/AFTER REPAIR VERIFICATION
+==================================================
+
+Implement repair verification.
+
+Allow maintenance workers to upload:
+
+- Before repair photograph.
+- After repair photograph.
+
+Display both images side by side.
+
+Store:
+
+- Repair date.
+- Worker ID.
+- Repair notes.
+- Uploaded images.
+- Completion status.
+
+Allow admins to approve or reject completion.
+
+Do not automatically claim that an image proves successful engineering repair. Admin verification is required.
+
+==================================================
+14. CITIZEN REPORT TRANSPARENCY
+==================================================
+
+Provide:
+
+- Unique complaint ID.
+- Report timestamp.
+- Complaint tracking.
+- Citizen report history.
+- Verification status.
+- Maintenance progress timeline.
+- Repair completion notification.
+
+Protect personal information and only expose necessary report information.
+
+==================================================
+15. GEOGRAPHICAL HOTSPOT ANALYSIS
+==================================================
+
+Implement geographical clustering of road damage reports.
+
+Use DBSCAN if practical or a simple distance-based clustering method.
+
+Display:
+
+- Areas with multiple reports.
+- High-priority damage clusters.
+- Roads with repeated complaints.
+- Unresolved damage hotspots.
+- Geographical distribution of repair work.
+
+Visualize hotspots using Leaflet.
+
+Clearly label hotspot analysis as historical/geographical analysis, not future prediction unless a forecasting model is actually implemented.
+
+==================================================
+16. NOTIFICATION SYSTEM
+==================================================
+
+Implement in-app notifications stored in SQLite.
+
+Notify users when:
+
+- A new critical report is identified.
+- Their complaint is verified.
+- Maintenance is assigned.
+- Work begins.
+- Repair is completed.
+- A report is rejected.
+
+Provide notification history and read/unread status.
+
+Email and SMS integrations are optional and must not be required for the application to run.
+
+==================================================
+17. AI-GENERATED MAINTENANCE REPORTS
+==================================================
+
+Implement downloadable PDF reports.
+
+Each report should contain:
+
+- Complaint ID.
+- Damage category.
+- Detection confidence.
+- Severity.
+- Priority score.
+- GPS coordinates.
+- Submission date.
+- Maintenance status.
+- Recommended action.
+- Before/after repair photographs where available.
+
+Provide an overall admin maintenance summary PDF if feasible.
+
+Do not require a paid AI API to generate standard reports.
+
+==================================================
+18. PROFESSIONAL UI/UX DESIGN
+==================================================
+
+Create a modern, professional, premium smart-city technology interface.
+
+DESIGN STYLE:
+
+- Modern civic technology platform.
+- Professional dark navy and blue theme.
+- Clean white/light-gray surfaces.
+- Red, orange, yellow and green status indicators.
+- Premium dashboard cards.
+- Clean typography.
+- Responsive layout.
+- Consistent spacing.
+- Lucide icons.
+- Smooth and subtle animations.
+- Professional charts and maps.
+- Loading states.
+- Empty states.
+- Validation messages.
+- Confirmation dialogs.
+- Error messages.
+
+Create separate dashboards and navigation for all three roles.
+
+CITIZEN NAVIGATION:
+
+- Home
+- Report Damage
+- My Reports
+- Track Complaint
+- Notifications
+- Profile
+
+ADMIN NAVIGATION:
+
+- Overview
+- All Reports
+- AI Detection
+- Damage Map
+- Priority Management
+- Maintenance Tasks
+- Hotspot Analysis
+- Analytics
+- User Management
+- Settings
+
+MAINTENANCE NAVIGATION:
+
+- My Tasks
+- Task Details
+- Update Progress
+- Before/After Upload
+- Work History
+
+Every visible button and navigation item must have a meaningful working action.
+
+==================================================
+19. DATABASE DESIGN
+==================================================
+
+Use SQLite and SQLAlchemy ORM.
+
+Create these tables:
+
+1. users
+2. road_reports
+3. detections
+4. maintenance_tasks
+5. maintenance_history
+6. notifications
+7. report_duplicates
+8. repair_images
+
+Use:
+
+- Primary keys.
+- Foreign keys.
+- Proper relationships.
+- Indexes.
+- Timestamps.
+- Validation.
+- Database initialization scripts.
+
+Store actual uploaded image files in organized directories and save their paths in the database.
+
+Provide a seed script containing clearly labeled demonstration data.
+
+==================================================
+20. BACKEND API REQUIREMENTS
+==================================================
+
+Implement REST APIs.
+
+AUTHENTICATION:
+
+POST /api/auth/register
+POST /api/auth/login
+GET /api/auth/me
+
+REPORTS:
+
+POST /api/reports
+GET /api/reports
+GET /api/reports/{id}
+PATCH /api/reports/{id}
+DELETE /api/reports/{id}
+
+AI:
+
+POST /api/detect
+GET /api/detections/{report_id}
+
+MAP:
+
+GET /api/map/reports
+GET /api/map/hotspots
+
+MAINTENANCE:
+
+GET /api/maintenance/tasks
+POST /api/maintenance/tasks
+PATCH /api/maintenance/tasks/{id}
+POST /api/maintenance/tasks/{id}/images
+
+ANALYTICS:
+
+GET /api/dashboard/summary
+GET /api/dashboard/charts
+GET /api/dashboard/priority
+
+NOTIFICATIONS:
+
+GET /api/notifications
+PATCH /api/notifications/{id}/read
+
+REPORT EXPORT:
+
+GET /api/export/reports/pdf
+
+Add:
+
+- Proper request and response schemas.
+- Input validation.
+- Error handling.
+- Appropriate HTTP status codes.
+- Authentication.
+- Role-based authorization.
+- Pagination where appropriate.
+
+==================================================
+21. PROJECT FOLDER STRUCTURE
+==================================================
+
+Generate a complete organized project:
+
+RoadGuard-AI/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   ├── utils/
+│   │   ├── assets/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── ai/
+│   │   ├── core/
+│   │   ├── database/
+│   │   └── main.py
+│   ├── uploads/
+│   ├── weights/
+│   ├── requirements.txt
+│   ├── .env.example
+│   └── seed.py
+│
+├── docs/
+│   ├── architecture.md
+│   └── API_DOCUMENTATION.md
+│
+├── scripts/
+│   ├── setup.bat
+│   └── start.bat
+│
+├── README.md
+└── .gitignore
+
+You can improve the folder structure where necessary, but preserve clean separation of frontend, backend, AI, database, and documentation.
+
+==================================================
+22. WINDOWS AUTOMATIC SETUP
+==================================================
+
+This is a critical requirement.
+
+I am using:
+
+- Windows 10/11.
+- Visual Studio Code.
+- Node.js.
+- Python.
+- Google Chrome.
+
+Create Windows-compatible scripts.
+
+setup.bat must:
+
+1. Check Python installation.
+2. Check Node.js and npm installation.
+3. Create Python virtual environment.
+4. Install backend dependencies.
+5. Install frontend dependencies.
+6. Create required directories.
+7. Initialize the database.
+8. Download or configure the AI model if possible.
+9. Prepare sample data.
+10. Report any missing requirements clearly.
+
+start.bat must:
+
+1. Start FastAPI backend.
+2. Start React frontend.
+3. Open the application in the browser if possible.
+4. Keep both services running.
+5. Show useful startup messages.
+6. Explain how to stop the services.
+
+Do not silently ignore failed installations or model downloads.
+
+Use paths and commands compatible with Windows.
+
+==================================================
+23. TESTING AND QUALITY ASSURANCE
+==================================================
+
+Test the complete application.
+
+AUTHENTICATION:
+- Registration.
+- Login.
+- Role restrictions.
+
+AI:
+- Image upload.
+- Actual model inference.
+- Damage classification.
+- Bounding box generation.
+- Confidence display.
+
+DATABASE:
+- Report insertion.
+- Report retrieval.
+- Duplicate detection.
+- Maintenance history.
+
+MAP:
+- GPS coordinate storage.
+- Marker display.
+- Filters.
+
+ADMIN:
+- Report verification.
+- Task assignment.
+- Status changes.
+
+MAINTENANCE:
+- Assigned task display.
+- Progress updates.
+- Before/after uploads.
+
+ANALYTICS:
+- Database-driven dashboard.
+- Chart generation.
+- PDF export.
+
+Provide test instructions and fix errors before delivery.
+
+Do not claim tests passed unless they were actually executed.
+
+==================================================
+24. 12-HOUR HACKATHON DEVELOPMENT PRIORITY
+==================================================
+
+Prioritize development in this order.
+
+PHASE 1 – ESSENTIAL WORKING MVP:
+
+1. React frontend.
+2. FastAPI backend.
+3. SQLite database.
+4. Authentication.
+5. Genuine pretrained AI detection.
+6. Image upload.
+7. Damage classification.
+8. Severity calculation.
+9. Priority calculation.
+10. GPS location.
+11. Interactive map.
+12. Admin dashboard.
+13. Repair status management.
+
+PHASE 2 – ADVANCED FEATURES:
+
+1. Duplicate detection.
+2. Smart recommendations.
+3. Hotspot clustering.
+4. Before/after repair verification.
+5. In-app notifications.
+6. PDF reports.
+7. Advanced analytics.
+
+PHASE 3 – FUTURE ENHANCEMENTS:
+
+1. Live traffic integration.
+2. Mobile application.
+3. CCTV integration.
+4. Predictive road deterioration.
+5. Municipal integration.
+6. SMS and email notifications.
+
+Implement the essential workflow first. Do not allow advanced features to break the MVP.
+
+==================================================
+25. HACKATHON PRESENTATION MATERIAL
+==================================================
+
+Generate the following presentation content:
+
+1. Project title.
+2. Abstract.
+3. Problem statement.
+4. Existing system.
+5. Existing system limitations.
+6. Proposed system.
+7. System architecture.
+8. Data flow diagram.
+9. AI/ML methodology.
+10. Database design.
+11. Core features.
+12. Advanced features.
+13. Innovation and uniqueness.
+14. Social impact.
+15. Economic impact.
+16. Technical feasibility.
+17. Future enhancements.
+18. Conclusion.
+
+Create a 3-minute demonstration script.
+
+The demo must show:
+
+1. Citizen uploads an actual road image.
+2. AI detects damage.
+3. Bounding boxes and confidence appear.
+4. Severity and priority are calculated.
+5. GPS coordinates are stored.
+6. Damage appears on the map.
+7. Admin verifies the report.
+8. Admin assigns maintenance.
+9. Maintenance team uploads after-repair evidence.
+10. Admin verifies completion.
+11. Dashboard analytics update.
+
+Also prepare likely hackathon judge questions with technically accurate answers.
+
+==================================================
+26. STRICT DELIVERY REQUIREMENTS
+==================================================
+
+THIS IS THE MOST IMPORTANT SECTION.
+
+I DO NOT WANT ONLY SOURCE CODE IN CHAT.
+
+I EXPECT THE ACTUAL PROJECT FILES.
+
+Deliver:
+
+1. Complete React frontend.
+2. Complete Python FastAPI backend.
+3. AI detection integration.
+4. SQLite database setup.
+5. Authentication and authorization.
+6. All essential APIs.
+7. Interactive map.
+8. Dashboard analytics.
+9. Maintenance workflow.
+10. Advanced features.
+11. Sample data.
+12. Configuration files.
+13. README.md.
+14. requirements.txt.
+15. package.json.
+16. .env.example.
+17. setup.bat.
+18. start.bat.
+19. API documentation.
+20. Hackathon presentation material.
+21. A downloadable RoadGuard-AI.zip.
+
+The ZIP must contain all source files, scripts, configuration and documentation required to run the project.
+
+If the AI model weights are too large to include, provide a reliable setup/download script and exact instructions.
+
+Do not include unnecessary large dependencies or generated cache files in the ZIP.
+
+Do not use paid APIs as mandatory dependencies.
+
+Do not require me to manually create missing files.
+
+Do not leave unfinished pages or nonfunctional buttons.
+
+Do not silently use mock data for genuine AI functionality.
+
+If something genuinely requires an external API key, clearly document it and provide a functional local fallback wherever possible.
+
+==================================================
+27. FINAL ACCEPTANCE TEST
+==================================================
+
+Before declaring the project complete, verify this exact workflow:
+
+TEST 1:
+Open the application.
+
+TEST 2:
+Log in with documented demo credentials.
+
+TEST 3:
+Upload a real road damage image.
+
+TEST 4:
+Run the actual AI detection model.
+
+TEST 5:
+View the annotated image, damage category and confidence.
+
+TEST 6:
+View calculated severity and priority score.
+
+TEST 7:
+Save the report to SQLite.
+
+TEST 8:
+Capture or enter GPS coordinates.
+
+TEST 9:
+View the report on the interactive map.
+
+TEST 10:
+Log in as admin.
+
+TEST 11:
+Verify the complaint and assign a maintenance task.
+
+TEST 12:
+Log in as maintenance personnel.
+
+TEST 13:
+Update maintenance status and upload after-repair evidence.
+
+TEST 14:
+Log in as admin and verify completion.
+
+TEST 15:
+Confirm dashboard analytics update from database records.
+
+TEST 16:
+Generate and download a PDF report.
+
+If any test fails, fix it or clearly document the limitation. Never claim successful verification for an untested feature.
+
+==================================================
+28. MY EXPECTED USER EXPERIENCE
+==================================================
+
+I want the following simple experience:
+
+STEP 1:
+Download RoadGuard-AI.zip.
+
+STEP 2:
+Extract the ZIP.
+
+STEP 3:
+Open the extracted RoadGuard-AI folder in Visual Studio Code.
+
+STEP 4:
+Run setup.bat once.
+
+STEP 5:
+Run start.bat.
+
+STEP 6:
+Open the application in Google Chrome.
+
+STEP 7:
+Log in using the demo credentials documented in README.md.
+
+STEP 8:
+Upload a road image and test the application.
+
+I do not want to manually write code or configure the frontend and backend separately.
+
+==================================================
+29. FINAL INSTRUCTIONS TO THE AI CODING AGENT
+==================================================
+
+Work as an autonomous software development agent.
+
+Do not stop after giving me an architecture or folder structure.
+
+Create the complete project files, install dependencies where your environment permits, run tests, fix bugs, and package the application.
+
+Work in manageable stages internally, but continue until the actual deliverable is ready.
+
+If you have access to a terminal, filesystem, and project execution environment, use them to generate and test the project.
+
+If you cannot execute or package files in your current environment, explicitly explain that limitation rather than pretending that a ZIP has been created.
+
+When finished, provide:
+
+1. Downloadable RoadGuard-AI.zip.
+2. Project folder structure.
+3. Exact Windows setup instructions.
+4. Exact startup instructions.
+5. Demo login credentials.
+6. AI model configuration instructions.
+7. List of tested features.
+8. List of known limitations.
+9. Three-minute hackathon presentation script.
+10. Technical judge questions and answers.
+
+FINAL GOAL:
+
+Deliver a professional, fully integrated, functional RoadGuard AI application that I can extract, open in VS Code, run on Windows, and demonstrate to hackathon judges.
+
+The project must combine genuine AI image detection, full-stack development, database management, GPS mapping, smart maintenance prioritization, and repair tracking.
+
+FUNCTIONALITY AND RELIABILITY ARE MORE IMPORTANT THAN UNNECESSARY COMPLEXITY.
+
+START BUILDING THE COMPLETE PROJECT NOW.
+
+DO NOT STOP AT THE PLANNING STAGE.
